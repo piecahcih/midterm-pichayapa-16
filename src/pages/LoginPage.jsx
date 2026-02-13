@@ -48,12 +48,12 @@ function LoginPage() {
         <h1 className="font-bold text-2xl">Welcome</h1>
         <div>
           <input type="text" name="username" placeholder="username" className={inputStyle}
-          onChange={hdlChange}/>
+          onChange={hdlChange} value={formLogin.username}/>
           {error?.username && <p className="text-red-600 text-[12px]">{error?.username[0]}</p>}
         </div>
         <div>
           <input type="password" name="password" placeholder="password" className={inputStyle}
-          onChange={hdlChange}/>
+          onChange={hdlChange} value={formLogin.password}/>
           {error?.password && <p className="text-red-600 text-[12px]">{error?.password[0]}</p>}
         </div>
         <button className="bg-amber-600 font-bold p-2">LOG IN</button>

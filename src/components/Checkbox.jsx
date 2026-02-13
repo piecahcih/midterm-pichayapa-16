@@ -14,7 +14,7 @@ import { useTodoStore } from "../stores/todoStore";
           </div>
           <div className="flex gap-3">
             <button className="bg-amber-100 ">Edit</button>
-            <button onClick={()=> hdlRemove(data)}>X</button>
+            <button onClick={(e)=> hdlRemove()}>X</button>
           </div>
         </div>
     )

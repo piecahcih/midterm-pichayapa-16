@@ -5,6 +5,7 @@ export const useTodoStore = create((set)=>({
     todo: null,
     loading: false,
     error: null,
+    newTask:"",
     setTodo: (state) =>  set({todo: state}),
     fetchTodo: async(userId)=>{
         set({loading: true, error: null});
@@ -43,6 +44,18 @@ export const useTodoStore = create((set)=>({
                 
             }
     },
+    // addTodo: async(userId)=>{
+    //         set({loading: true, error: null});
+    //         try {
+    //             const res = await axios.post(`https://drive-accessible-pictures-send.trycloudflare.com/todos/${userId}`)
+    //             set({loading: false})
+    //         } catch (error) {
+    //             set({
+    //                 error: error.response?.data?.message || error.message || "Fetch failed", loading: false,
+    //             })
+                
+    //         }
+    // }
     
 })
 
