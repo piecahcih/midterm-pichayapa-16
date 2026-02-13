@@ -38,14 +38,14 @@ function ToDoListPage() {
   }
 
 
-  const hdlRemove = (id) => {
-    // console.log('remove e',e)
-    // e.preventDefault()
-    // console.log('e.id',e.id)
-    // console.log('idx', idx)
-    removeTodo(userId, id)
-    fetchTodo(userId)
-  }
+                                // const hdlRemove = (id) => {
+                                //   // console.log('remove e',e)
+                                //   // e.preventDefault()
+                                //   // console.log('e.id',e.id)
+                                //   // console.log('idx', idx)
+                                //   removeTodo(userId, id)
+                                //   fetchTodo(userId)
+                                // }
   const hdlAdd = async(e)=>{
     e.preventDefault()
     // console.log('adde',e)
@@ -87,7 +87,8 @@ function ToDoListPage() {
           </div>
         </form>
 
-        {todo?.map((el, idx)=>(<Checkbox key={el.id} data={el} hdlChange={() => hdlChange(el, idx)} hdlRemove={()=>hdlRemove(el.id)}/>))}
+        {todo?.map((el, idx)=>(<Checkbox key={el.id} data={el} hdlChange={() => hdlChange(el, idx)} />))}
+        {/* {todo?.map((el, idx)=>(<Checkbox key={el.id} data={el} hdlChange={() => hdlChange(el, idx)} hdlRemove={()=>hdlRemove(el.id)}/>))} */}
 
       </div>
 

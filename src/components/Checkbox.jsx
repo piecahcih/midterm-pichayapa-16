@@ -1,10 +1,17 @@
 import { useTodoStore } from "../stores/todoStore";
+import { useParams } from "react-router";
 
   export default function Checkbox(props){
-    const {data, hdlChange, hdlRemove} = props
+    const {data, hdlChange} = props
+      // console.log("data",data)
+    const {userId} = useParams()
+    const removeTodo = useTodoStore((state)=>state.removeTodo);
 
-    // const removeTodo = useTodoStore((state)=>state.removeTodo);
-    // console.log("data",data)
+    const hdlRemove = (e) => {
+
+        removeTodo(userId, e)
+        fetchTodo(userId)
+    }
     return (
         <div className="flex justify-between">
           <div className="flex gap-4">
