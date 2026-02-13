@@ -41,11 +41,11 @@ function LoginPage() {
   console.log("error",error)
   console.log("formlogin",formLogin)
 
-  const inputStyle = "border p-2 w-full"
+  const inputStyle = "shadow bg-amber-200 p-2 w-full rounded-md"
   return (
-    <div className="">
-      <form onSubmit={hdlSubmit} className="flex flex-col bg-amber-300 rounded-3xl p-5 m-10 gap-4">
-        <h1 className="font-bold text-2xl">Welcome</h1>
+    <div className="flex justify-center m-10 ">
+      <form onSubmit={hdlSubmit} className="flex flex-col bg-amber-300 rounded-3xl px-8 py-12 m-10 gap-4 w-[450px]">
+        <h1 className="font-bold text-3xl">Welcome</h1>
         <div>
           <input type="text" name="username" placeholder="username" className={inputStyle}
           onChange={hdlChange} value={formLogin.username}/>
@@ -56,7 +56,7 @@ function LoginPage() {
           onChange={hdlChange} value={formLogin.password}/>
           {error?.password && <p className="text-red-600 text-[12px]">{error?.password[0]}</p>}
         </div>
-        <button className="bg-amber-600 font-bold p-2">LOG IN</button>
+        <button className="shadow bg-amber-600 font-bold p-2 rounded-md">LOG IN</button>
       </form>
     </div>
   )

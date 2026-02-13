@@ -59,6 +59,7 @@ function ToDoListPage() {
     // const newAddTodo = [...todo]
     // newTodo[]
     // addTodo(userId)
+    fetchTodo(userId)
   }
 
   useEffect(()=>{
@@ -71,8 +72,8 @@ function ToDoListPage() {
   // console.log("Content",todo)
 
   return (
-    <div>
-      <div className="flex flex-col bg-amber-300 rounded-3xl p-7 m-10 gap-4">
+    <div className="flex justify-center m-10">
+      <div className="flex flex-col bg-amber-300 rounded-3xl p-7 m-10 gap-4 w-[450px]">
         <div className="flex items-center justify-between text-3xl">
           <h1 className="font-bold">My Todo </h1>
           {emoji}
@@ -82,8 +83,8 @@ function ToDoListPage() {
           <div className="flex justify-between border-b-1 ">
             <input type="text" name="content" placeholder="new task" className="w-full"
             onChange={hdlChangeInput}  value={addItem.content}/>
-            <button className="bg-amber-100"
-            >Add</button>
+            <button className="bg-amber-600 px-2 py-1 my-2 rounded-3xl font-medium text-amber-100">
+              Add</button>
           </div>
         </form>
 
