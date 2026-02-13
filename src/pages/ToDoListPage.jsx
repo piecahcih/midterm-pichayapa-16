@@ -38,13 +38,13 @@ function ToDoListPage() {
   }
 
 
-  const hdlRemove = (e) => {
-    console.log('remove e',e)
-    e.preventDefault()
+  const hdlRemove = (id) => {
+    // console.log('remove e',e)
+    // e.preventDefault()
     // console.log('e.id',e.id)
     // console.log('idx', idx)
-    removeTodo(userId, e.id)
-    // fetchTodo(userId)
+    removeTodo(userId, id)
+    fetchTodo(userId)
   }
   const hdlAdd = async(e)=>{
     e.preventDefault()
@@ -87,7 +87,7 @@ function ToDoListPage() {
           </div>
         </form>
 
-        {todo?.map((el, idx)=>(<Checkbox key={el.id} data={el} hdlChange={() => hdlChange(el, idx)} hdlRemove={(e)=>hdlRemove(e)}/>))}
+        {todo?.map((el, idx)=>(<Checkbox key={el.id} data={el} hdlChange={() => hdlChange(el, idx)} hdlRemove={()=>hdlRemove(el.id)}/>))}
 
       </div>
 
